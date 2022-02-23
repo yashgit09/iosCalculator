@@ -24,7 +24,8 @@ class ViewController: UIViewController {
   
     func clearAll(){
         workings=""
-        
+        calworking.text=""
+        calresult.text=""
         
     }
     
@@ -70,7 +71,6 @@ class ViewController: UIViewController {
   
     func addToWorkings(value : String){
         workings = workings + value
-      
         calworking.text = workings
         
     }
