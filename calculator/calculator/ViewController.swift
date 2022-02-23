@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var calworking: UILabel!
     @IBOutlet weak var calresult: UILabel!
     
-  
+   /* string declared */
     var workings:String = ""
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
     }
     
-  
+   /* function to clear all data when AC button pressed*/ 
     func clearAll(){
         workings=""
         calworking.text=""
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func equal(_ sender: Any) {
  
-         
+    /* used NSExpression to solve the equation obtained in workings(string)  */
             if !workings.contains(".")
         {
             let appendnum = ".00"
@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         let resultString = formatResults(result: result)
         calresult.text = resultString
 
-        
     }
     
     func formatResults(result: Double)-> String{
@@ -60,7 +59,7 @@ class ViewController: UIViewController {
         clearAll()
     }
     
-    
+    /* function to delete the last inserted digit like backspace*/
     @IBAction func backspace(_ sender: Any) {
         if(!workings.isEmpty){
             workings.removeLast()
@@ -68,13 +67,15 @@ class ViewController: UIViewController {
         }
     }
     
-  
+   /* function to append the digit and signs in workings string */
     func addToWorkings(value : String){
         workings = workings + value
         calworking.text = workings
         
     }
     
+   /* key functions below */
+
     @IBAction func percent(_ sender: Any) {
         addToWorkings(value : "/100")
     }
