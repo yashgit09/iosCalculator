@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     
     @IBAction func backspace(_ sender: Any) {
         if(!workings.isEmpty){
-            
+            workings.removeLast()
             calworking.text = workings
         }
     }
@@ -70,6 +70,7 @@ class ViewController: UIViewController {
   
     func addToWorkings(value : String){
         workings = workings + value
+      
         calworking.text = workings
         
     }
