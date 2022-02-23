@@ -70,7 +70,7 @@ class ViewController: UIViewController {
   
     func addToWorkings(value : String){
         workings = workings + value
-       
+        calworking.text = workings
         
     }
     
